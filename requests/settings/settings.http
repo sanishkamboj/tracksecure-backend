@@ -1,0 +1,7 @@
+@local_url = http://localhost:4000/api/v1.0/settings
+@live_url = http://54.159.32.73:4000/api/v1.0/settings
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTM1MDUsImVtYWlsIjoicmFodWx0cml2ZWRpMTgwQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoicmFodWx0cml2ZWRpMTgwIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNTk0ODc2Nzk2LCJleHAiOjE1OTQ5NjMxOTZ9.2288Htgm8p6GZHQZw5o5Svpjo58mskq4UzvqMCtk0es
+
+### get settings
+GET {{local_url}} HTTP/1.1
+Authorization: {{token}}

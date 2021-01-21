@@ -1,0 +1,6 @@
+@local_url = http://localhost:4000/api/v1.0/user_panel/dashboard
+@live_url = http://54.159.32.73:4000/api/v1.0/user_panel/dashboard
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDksImVtYWlsIjoicmFodWx0cml2ZWRpMTgwQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoicmFodWx0cml2ZWRpMTgwIiwiaWF0IjoxNTkyOTg3NTU0LCJleHAiOjE1OTMwNzM5NTR9.XwGHQKUbyXtG0J0MZBnet46wAmFvtIXyOZ1O_nCgsWU
+
+GET {{local_url}}/45 HTTP/1.1
+Authorization: {{token}}

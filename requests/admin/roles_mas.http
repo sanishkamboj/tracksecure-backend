@@ -1,0 +1,35 @@
+@local_url = http://localhost:4000/api/v1.0/admin_panel/roles
+
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpQWRtaW5JZCI6MTM0OTEsInZFbWFpbCI6InBpbmFraW5wQGhpcnRlY2hub2xvZ3kuY29tIiwidlVzZXJOYW1lIjoicGluYWtpbnAiLCJpYXQiOjE1ODg4MzY5NzQsImV4cCI6MTU4ODkyMzM3NH0.UpcJ-xu_HazwF0TAGB8QqpLy5fqUUFQuU60G93zK5sY
+
+### List roles
+GET {{local_url}} HTTP/1.1
+Authorization: {{token}}
+
+### Get role by id
+GET {{local_url}}/8 HTTP/1.1
+Authorization: {{token}}
+
+### Create role
+POST {{local_url}} HTTP/1.1
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "iOrganizationId": 1,
+  "vRoleName": "New Role"
+}
+
+### Update role
+PATCH {{local_url}}/7 HTTP/1.1
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "iOrganizationId": 1,
+  "vRoleName": "new role2"
+}
+
+### Delete role
+DELETE {{local_url}}/8 HTTP/1.1
+Authorization: {{token}}

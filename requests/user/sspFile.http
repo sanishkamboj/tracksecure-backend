@@ -1,0 +1,21 @@
+@local_url = http://localhost:4000/api/v1.0/user_panel/ssp_file
+@live_url = http://54.159.32.73:4000/api/v1.0/user_panel/ssp_file
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZW1haWwiOiJyYWh1bHRyaXZlZGkxODAxQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoicmFodWx0cml2ZWRpMTgwMSIsImlhdCI6MTYwMTQzODU5NSwiZXhwIjoxNjAxNTI0OTk1fQ.n9uMbI5GvblTxmRp6yoKD6fjwxToe1-ihRSy1_DvC0o
+
+
+###
+GET {{local_url}}?iUserId=15&iARId=2 HTTP/1.1
+Authorization: {{token}}
+
+###
+POST {{local_url}}/61/7 HTTP/1.1
+Authorization: {{token}}
+Content-Type: application/json
+
+###
+DELETE {{local_url}}?iSSPFileId=1&Key=development%2Fstorage%2Fssp%2Fsample.docx HTTP/1.1
+Authorization: {{token}}
+
+###
+GET {{local_url}}/download/development%2Fstorage%2Fssp%2F4_7_1597388226199.docx HTTP/1.1
+Authorization: {{token}}

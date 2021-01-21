@@ -1,0 +1,6 @@
+@local_url = http://192.168.32.116:4000/api/v1.0/admin_panel/invoice
+@live_url = http://54.159.32.73:4000/api/v1.0/admin_panel/invoice
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZW1haWwiOiJyYWh1bHRyaXZlZGkxODBAZ21haWwuY29tIiwidXNlcm5hbWUiOiJyYWh1bHRyaXZlZGkxODAiLCJpYXQiOjE2MDA3Njg4MDEsImV4cCI6MTYwMDg1NTIwMX0.fe6qqEeQOFr0p7Fd2HnuuSYKVeT6sS5Nk1V1edPjpmM
+
+GET {{local_url}}/4pdu677kdr96ypn?iSTranId=4 HTTP/1.1
+Authorization: {{token}}

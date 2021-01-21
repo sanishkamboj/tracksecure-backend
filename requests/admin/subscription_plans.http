@@ -1,0 +1,46 @@
+@local_url = http://localhost:4000/api/v1.0/admin_panel/subscription_plans
+@remote_url = http://54.159.32.73:4000/api/v1.0/admin_panel/subscription_plans
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTM0OTEsImVtYWlsIjoicGluYWtpbnBAaGlydGVjaG5vbG9neS5jb20iLCJ1c2VybmFtZSI6InBpbmFraW5wIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNTkyNDU0MTQ0LCJleHAiOjE1OTI1NDA1NDR9.7d-xMlmwZQ4VsuyhNSEFFZfVZ0d9gh6B6UkKQUf6zww
+
+### create plan
+POST {{remote_url}} HTTP/1.1
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "vPlanName": "Plan 2",
+  "tDesc": "Plan description",
+  "iUserLimit": 2,
+  "iAssessmentLimit": 1,
+  "iTotalDays": 31,
+  "fPrice": 499.50,
+  "iStatus": 0
+}
+
+### list plans
+GET {{remote_url}} HTTP/1.1
+Authorization: {{token}}
+
+### list plan
+GET {{local_url}}/7 HTTP/1.1
+Authorization: {{token}}
+
+###
+PATCH {{local_url}}/7 HTTP/1.1
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "vPlanName": "Plan 100",
+  "tDesc": "Plan description",
+  "iUserLimit": 2,
+  "iAssessmentLimit": 1,
+  "iTotalDays": 31,
+  "fPrice": 399.50,
+  "iStatus": 0
+}
+
+
+### delete plan
+DELETE {{local_url}}/6 HTTP/1.1
+Authorization: {{token}}

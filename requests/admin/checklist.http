@@ -1,0 +1,39 @@
+@local_url = http://localhost:4000/api/v1.0/admin_panel/checklist
+@live_url = http://54.159.32.73:4000/api/v1.0/admin_panel/checklist
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTM1MDIsImVtYWlsIjoiaGVtYW5ncEBoaXJ0ZWNobm9sb2d5LmNvbSIsInVzZXJuYW1lIjoiaGVtYW5ncCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU5NzY2Mzk1NiwiZXhwIjoxNTk3NzUwMzU2fQ.zNecakm9vkgeceAbSQyQ-7MPbfFVQd_nAXH-prUWRM8
+
+### Get checklist
+GET {{local_url}} HTTP/1.1
+Authorization: {{token}}
+
+### Get a checklist item
+GET {{local_url}}/8 HTTP/1.1
+Authorization: {{token}}
+
+### Create a checklist item
+POST {{local_url}} HTTP/1.1
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "iATMId": 1,
+  "ChecklistItemName": "checklist2",
+  "ShortDescription": "checklist short desc",
+  "LongDescription": "checklist Long description",
+  "iStatus": 1
+}
+
+### Update a checklist item
+PATCH {{local_url}}/1 HTTP/1.1
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "iATMId": 1,
+  "ChecklistItemName": "checklist1",
+  "iStatus": 1
+}
+
+### Delete a checklist item
+DELETE {{local_url}}/2 HTTP/1.1
+Authorization: {{token}}

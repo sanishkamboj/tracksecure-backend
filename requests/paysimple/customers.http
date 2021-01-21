@@ -1,0 +1,36 @@
+@local_url = http://localhost:4000/api/v1.0/paysimple/customers
+@live_url = http://54.159.32.73:4000/api/v1.0/paysimple/customers
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTM1MDIsImVtYWlsIjoiaGVtYW5ncEBoaXJ0ZWNobm9sb2d5LmNvbSIsInVzZXJuYW1lIjoiaGVtYW5ncCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU5NzIxNjU3MywiZXhwIjoxNTk3MzAyOTczfQ.N52-i8W1s4ZLQaRWEXXVCmettLPaUKBvO7J3DHGV-R4
+
+### list customers
+GET {{local_url}} HTTP/1.1
+Authorization: {{token}}
+
+### list payments
+GET {{live_url}}/1019925/payments HTTP/1.1
+Authorization: {{token}}
+
+### get customer
+GET {{live_url}}/1079304?listAccounts=true HTTP/1.1
+Authorization: {{token}}
+
+### create customers
+POST {{local_url}} HTTP/1.1
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "FirstName": "Bob",
+  "LastName": "Alice",
+  "Company": "CryptoOrgs",
+  "BillingAddress": {
+    "City": "CryptoCity",
+    "Country": "Decentralized",
+    "StreetAddress1": "BTC ETH 2.0",
+    "ZipCode": "380008"
+  }
+}
+
+### delete customer
+DELETE {{local_url}}/1019925 HTTP/1.1
+Authorization: {{token}}

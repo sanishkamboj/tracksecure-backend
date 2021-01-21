@@ -1,0 +1,18 @@
+@local_url = http://localhost:4000/api/v1.0/paysimple/accounts
+@live_url = http://54.159.32.73:4000/api/v1.0/paysimple/accounts
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTM1MDIsImVtYWlsIjoiaGVtYW5ncEBoaXJ0ZWNobm9sb2d5LmNvbSIsInVzZXJuYW1lIjoiaGVtYW5ncCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU5NzMxMDEzMiwiZXhwIjoxNTk3Mzk2NTMyfQ.xgmRvxi8AW6ntin6XlVDIoyehUPLD4qa5oJ-zNjGmXM
+
+### create accounts
+POST {{live_url}} HTTP/1.1
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "CreditCardNumber": "41111111111115",
+    "ExpirationDate": "12/2022",
+    "Issuer": "Visa",
+    "CustomerId": 1019302
+}
+
+### get account
+GET {{local_url}}/1155922 HTTP/1.1

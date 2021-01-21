@@ -1,0 +1,20 @@
+@local_url = http://localhost:4000/api/v1.0/admin_panel/evidence
+@live_url = http://54.159.32.73:4000/api/v1.0/admin_panel/evidence
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJocnAxOEBob3RtYWlsLmNvbSIsInVzZXJuYW1lIjoiaHJwMTgiLCJpYXQiOjE1OTcyMzY4MDUsImV4cCI6MTU5NzMyMzIwNX0.g9ubgSGq61UMv0KRAaR6_a3kH7cb2BBV191LtETUWBU
+
+###
+GET {{live_url}} HTTP/1.1
+Authorization: {{token}}
+
+###
+GET {{local_url}}?iCRId=2 HTTP/1.1
+Content-Type: application/json
+Authorization: {{token}}
+
+###
+DELETE {{local_url}}?iCRId=2&Key=development%2fstorage%2fevidence%2f1589868090785.png
+Authorization: {{token}}
+
+###
+GET {{local_url}}/download/development%2Fstorage%2Fevidence%2F1589877056625.jpeg
+Authorization: {{token}}

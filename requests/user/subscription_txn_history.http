@@ -1,0 +1,7 @@
+@url = http://54.159.32.73:4000/api/v1.0/user_panel/subscription_txn_history
+@local_url = http://192.168.32.116:4000/api/v1.0/user_panel/subscription_txn_history
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZW1haWwiOiJyYWh1bHRyaXZlZGkxODBAZ21haWwuY29tIiwidXNlcm5hbWUiOiJyYWh1bHRyaXZlZGkxODAiLCJpYXQiOjE2MDA3Njg4MDEsImV4cCI6MTYwMDg1NTIwMX0.fe6qqEeQOFr0p7Fd2HnuuSYKVeT6sS5Nk1V1edPjpmM
+
+###
+GET {{local_url}}?iOrganizationId=45 HTTP/1.1
+Authorization: {{token}}

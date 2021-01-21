@@ -1,0 +1,24 @@
+@local_url = http://localhost:4000/api/v1.0/user_panel/assessment_records
+@live_url = http://54.159.32.73:4000/api/v1.0/user_panel/assessment_records
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJqb2huMjNAZmRhdy5jby5raiIsInVzZXJuYW1lIjoiam9objIzIiwiaWF0IjoxNTk3Mzc3ODIyLCJleHAiOjE1OTc0NjQyMjJ9.KbaA4RJgjLvXtB2Ui4dJDRQJkwDW_hkrTvwC6ot-NyY
+
+### List assessment records
+GET {{local_url}}/5 HTTP/1.1
+Authorization: {{token}}
+
+### Get assessment record
+GET {{live_url}}/5/3?iCertifyingUserId=6 HTTP/1.1
+Authorization: {{token}}
+
+### Create assessment record
+POST {{local_url}} HTTP/1.1
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "iATMId": 1,
+  "iATMName": "Assessment 1",
+  "iOrganizationId": 3,
+  "AssessmentStatus": 1,
+  "iCertifyingUserId": 4
+}

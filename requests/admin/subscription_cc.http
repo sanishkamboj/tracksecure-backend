@@ -1,0 +1,18 @@
+@local_url = http://localhost:4000/api/v1.0/admin_panel/subscription_cc
+@remote_url = http://54.159.32.73:4000/api/v1.0/admin_panel/subscription_cc
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTIsImVtYWlsIjoiaGFyc2hAZ21haWwuY29tIiwidXNlcm5hbWUiOiJoYXJzaCIsImlhdCI6MTU5NDAyMzc2OCwiZXhwIjoxNTk0MTEwMTY4fQ.Sa1xZdfpiR2Ar_OE5yT_FlQsLQOwv0grGwPCmWc6-8Y
+
+### get cc details
+GET {{local_url}}/58 HTTP/1.1
+Authorization: {{token}}
+
+### update cc details
+PATCH {{local_url}}/58 HTTP/1.1
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "vCCFirstName": "Rahul",
+  "vCCLastName": "Trivedi",
+  "vCCNumber": "888888888"
+}

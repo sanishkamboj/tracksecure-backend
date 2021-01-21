@@ -1,0 +1,78 @@
+@local_url = http://localhost:4000/api/v1.0/admin_panel/admins
+@live_url = http://54.159.32.73:4000/api/v1.0/admin_panel/admins
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTM1MDIsImVtYWlsIjoiaGVtYW5ncEBoaXJ0ZWNobm9sb2d5LmNvbSIsInVzZXJuYW1lIjoiaGVtYW5ncCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU5NzczNDgyMywiZXhwIjoxNTk3ODIxMjIzfQ.5FcS2AXSkqswHpz1M5RSXxGfCt8TUJApKrBUz5SrLLA
+
+### login
+POST {{live_url}}/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "vEmail": "hemangp@hirtechnology.com",
+  "vPassword": "123456"
+}
+
+### logout
+POST {{local_url}}/logout HTTP/1.1
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "loginId": 2
+}
+
+### forgot user password
+POST {{local_url}}/forgot_password HTTP/1.1
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "oldPassword": "lol",
+  "newPassword": "123456"
+}
+
+### list admins
+GET {{local_url}} HTTP/1.1
+Authorization: {{token}}
+
+### get admin
+GET {{local_url}}/13491 HTTP/1.1
+Authorization: {{token}}
+
+### get logged in admin
+GET {{local_url}}/me HTTP/1.1
+Authorization: {{token}}
+
+### create admin
+POST {{local_url}} HTTP/1.1
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "vFirstName": "asd",
+  "vLastName": "adadasd",
+  "vEmail": "qweqwaeA@sda.asd",
+  "vPassword": "dfsd",
+  "iAGroupId": 2
+}
+
+### update admin
+PATCH {{local_url}}/13491 HTTP/1.1
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "vFirstName": "Pinakin"
+}
+
+### update me
+PATCH {{local_url}}/me HTTP/1.1
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "vPassword": "456789"
+}
+
+### delete user
+DELETE {{local_url}}/13491 HTTP/1.1
+Authorization: {{token}}

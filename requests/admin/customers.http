@@ -1,0 +1,46 @@
+@local_url = http://localhost:4000/api/v1.0/admin_panel/customers
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZW1haWwiOiJyYWh1bHRyaXZlZGkxODBAZ21haWwuY29tIiwidXNlcm5hbWUiOiJyYWh1bHRyaXZlZGkxODAiLCJpYXQiOjE1OTgzMzcxMjIsImV4cCI6MTU5ODQyMzUyMn0.-IEKf-vCna18fPoLZPsPtG2iTNfwao0sGcwE-xcikIs
+
+### List customers
+GET {{local_url}} HTTP/1.1
+Authorization: {{token}}
+
+### Get customer
+GET {{local_url}}/6 HTTP/1.1
+Authorization: {{token}}
+
+### create customer
+POST {{local_url}} HTTP/1.1
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "vFirstName": "Dead",
+  "vLastName": "Pool",
+  "iOrganizationId": 1,
+  "iRoleId": 1,
+  "vPassword": "123456789",
+  "vEmail": "dead2@pool.com",
+  "vPhone": "555555",
+  "vTitle": "deadpool",
+  "iStatus": 1
+}
+
+### update customer
+PATCH {{local_url}}/3 HTTP/1.1
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "vFirstName": "Dead",
+  "vLastName": "Venom",
+  "iStatus": 0
+}
+
+### delete customer
+DELETE {{local_url}}/5 HTTP/1.1
+Authorization: {{token}}
+
+### send password reset token
+POST {{local_url}}/reset-password HTTP/1.1
+Authorization: {{token}}

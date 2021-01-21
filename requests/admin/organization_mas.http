@@ -1,0 +1,37 @@
+@url = http://54.159.32.73:4000/api/v1.0/admin_panel/organizations
+@local_url = http://localhost:4000/api/v1.0/admin_panel/organizations
+
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTM1MDIsImVtYWlsIjoiaGVtYW5ncEBoaXJ0ZWNobm9sb2d5LmNvbSIsInVzZXJuYW1lIjoiaGVtYW5ncCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU5NjE2OTAwMiwiZXhwIjoxNTk2MjU1NDAyfQ.o-5cxF9oORPrCkOV2bKaoLu8Kt3vtbb2ags5U_4ouow
+
+### List organizations
+GET {{url}} HTTP/1.1
+Authorization: {{token}}
+
+### Get organization
+GET {{url}}/7 HTTP/1.1
+Authorization: {{token}}
+
+### Create organization
+POST {{url}} HTTP/1.1
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "vOrganizationName": "New Org",
+  "vOrganizationAddress": "New address",
+  "vOrganizationPhone": "9122222222"
+}
+
+### Update organization
+PATCH {{local_url}}/7 HTTP/1.1
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "vOrganizationAddress": "New Address",
+  "vOrganizationPhone": "1234567890"
+}
+
+### Delete organization
+DELETE {{url}}/3 HTTP/1.1
+Authorization: {{token}}

@@ -1,0 +1,88 @@
+@url = http://54.159.32.73:4000/api/v1.0/user_panel/users
+@local_url = http://192.168.32.116:4000/api/v1.0/user_panel/users
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZW1haWwiOiJyYWh1bHRyaXZlZGkxODBAZ21haWwuY29tIiwidXNlcm5hbWUiOiJyYWh1bHRyaXZlZGkxODAiLCJpYXQiOjE2MDAxNjI0OTAsImV4cCI6MTYwMDI0ODg5MH0.PlsNNgItiv1XvITchg2Ng3jEsxswIsD6gag4zpzEA3A
+
+### login
+POST {{local_url}}/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "vEmail": "rahultrivedi180@gmail.com",
+  "vPassword": "123456"
+}
+
+###
+POST {{local_url}}/login/2fa HTTP/1.1
+Content-Type: application/json
+
+{
+  "vEmail": "rahultrivedi180@gmail.com",
+  "iOTP": 175303 
+}
+
+### logout
+POST {{local_url}}/logout HTTP/1.1
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "loginId": 15
+}
+
+### register
+POST {{local_url}}/register HTTP/1.1
+Content-Type: application/json
+
+{
+  "vFirstName": "Rahul",
+  "vLastName": "Trivedi",
+  "vPassword": "11234565",
+  "vEmail": "new@org.asd",
+  "vPhone": "45455",
+  "vOrganizationName": "new org",
+  "iSPlanId": 6,
+  "vCCFirstName": "RRahul",
+  "vCCLastName": "TTrivedi",
+  "vCCType": "VISA",
+  "vCCNumber": "4532822287982199",
+  "vCCExpiry": "2018",
+  "vCCCvv": "352",
+  "vCCAddress": "542 W. 15th Street",
+  "vCCCity": "Ahmedabad",
+  "vCCState": "Gujarat",
+  "vCCZipcode": "380008",
+  "vCCCountry": "USA"
+}
+
+### get profile
+GET {{local_url}}/me
+Authorization: {{token}}
+
+### get profile picture
+GET {{local_url}}/me/profilePicture
+Authorization: {{token}}
+
+### plan details
+GET {{local_url}}/plan/46 HTTP/1.1
+Authorization: {{token}}
+
+###
+
+### update profile
+PATCH {{local_url}}/me http/1.1
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "vFirstName": "Tony"
+}
+
+### upgrade plan
+PATCH {{local_url}}/plan HTTP/1.1
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "iOrganizationId": 6,
+  "iSPlanId": 8,
+}

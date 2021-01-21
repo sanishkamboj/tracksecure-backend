@@ -1,0 +1,34 @@
+@local_url = http://localhost:4000/api/v1.0/admin_panel/milestone_records
+@live_url = http://54.159.32.73:4000/api/v1.0/admin_panel/milestone_records
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpQWRtaW5JZCI6MTM0OTEsInZFbWFpbCI6InBpbmFraW5wQGhpcnRlY2hub2xvZ3kuY29tIiwidlVzZXJOYW1lIjoicGluYWtpbnAiLCJpYXQiOjE1ODkxNjYyNTEsImV4cCI6MTU4OTI1MjY1MX0.ONDA9YtQxwB6-3LMMFB0IMZxWYt2YeOIgz9bVmZTPy4
+
+### Get milestones
+GET {{live_url}}?iPOAId=4 HTTP/1.1
+Authorization: {{token}}
+
+### create milestone
+POST {{local_url}} HTTP/1.1
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "iPOAId": 1,
+  "MilestoneName": "milestone",
+  "MilestoneStatus": 1,
+  "ActionNote": "Take an action",
+  "TargetCompletion": "2020-05-06 06:43:46"
+}
+
+### update milestone
+PATCH {{local_url}}/2 HTTP/1.1
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "ActionNote": "new action"
+}
+
+### delete milestone
+DELETE {{local_url}}/2 HTTP/1.1
+Authorization: {{token}}
+Content-Type: application/json

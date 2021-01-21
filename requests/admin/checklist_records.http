@@ -1,0 +1,30 @@
+@local_url = http://localhost:4000/api/v1.0/admin_panel/checklist_records
+@live_url = http://54.159.32.73:4000/api/v1.0/admin_panel/checklist_records
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTM1MDIsImVtYWlsIjoiaGVtYW5ncEBoaXJ0ZWNobm9sb2d5LmNvbSIsInVzZXJuYW1lIjoiaGVtYW5ncCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU5NzczNDgyMywiZXhwIjoxNTk3ODIxMjIzfQ.5FcS2AXSkqswHpz1M5RSXxGfCt8TUJApKrBUz5SrLLA
+
+### List checklist records
+GET {{local_url}}?iOrganizationId=8&hideCompleted=1 HTTP/1.1
+Authorization: {{token}}
+
+### Get checklist record
+GET {{local_url}}/1 HTTP/1.1
+Authorization: {{token}}
+
+### Update checklist record
+PATCH {{local_url}}/1 HTTP/1.1
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "iARId": 12,
+  "iCMId": 11,
+  "iUserId": 6,
+  "ChecklistRecordStatus": 1,
+  "Results": null,
+  "iPOAId": null,
+  "DateCompleted": null
+}
+
+### Download checklist file
+GET {{local_url}}/8/download HTTP/1.1
+Authorization: {{token}}

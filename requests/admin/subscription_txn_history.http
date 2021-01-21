@@ -1,0 +1,11 @@
+@url = http://54.159.32.73:4000/api/v1.0/admin_panel/subscription_txn_history
+@local_url = http://192.168.1.4:4000/api/v1.0/admin_panel/subscription_txn_history
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZW1haWwiOiJyYWh1bHRyaXZlZGkxODBAZ21haWwuY29tIiwidXNlcm5hbWUiOiJyYWh1bHRyaXZlZGkxODAiLCJpYXQiOjE1OTg4NTQyNjUsImV4cCI6MTU5ODk0MDY2NX0.O33hVOrH0tSpmQtz5Sw1CcTZpkX-DGmmVQcVM68PVZI
+
+###
+GET {{local_url}}?vOrderId=4pdu3jzkbqeqdnp HTTP/1.1
+Authorization: {{token}}
+
+###
+GET {{local_url}}/6 HTTP/1.1
+Authorization: {{token}}

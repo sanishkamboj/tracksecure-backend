@@ -1,0 +1,7 @@
+@local_url = http://localhost:4000/api/v1.0/user_panel/method_objects_mas
+@live_url = http://54.159.32.73:4000/api/v1.0/user_panel/method_objects_mas
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJkZWFkQHBvb2wuY29tIiwidXNlcm5hbWUiOiJkZWFkIiwiaWF0IjoxNTkxNjcyNTI2LCJleHAiOjE1OTE3NTg5MjZ9.l08Iw5ICg68iMrww6b_oJ1_RRvy6FJuNq_1i9ldB1HQ
+
+###
+GET {{local_url}}/1 HTTP/1.1
+Authorization: {{token}}

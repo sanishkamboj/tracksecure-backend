@@ -1,0 +1,35 @@
+@local_url = http://localhost:4000/api/v1.0/admin_panel/assessment_type
+@live_url = http://54.159.32.73:4000/api/v1.0/admin_panel/assessment_type
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpQWRtaW5JZCI6MTM0OTEsInZFbWFpbCI6InBpbmFraW5wQGhpcnRlY2hub2xvZ3kuY29tIiwidlVzZXJOYW1lIjoicGluYWtpbnAiLCJpYXQiOjE1ODgyNDU1NzMsImV4cCI6MTU4ODMzMTk3M30.D9ODMB6HxrIAo_afVojX7EnARosM4s6dAFxcP-npiI4
+
+### List assessments
+GET {{local_url}} HTTP/1.1
+Authorization: {{token}}
+
+### Get assessment
+GET {{local_url}}/1 HTTP/1.1
+Authorization: {{token}}
+
+### Create assessment type
+POST {{local_url}} HTTP/1.1
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "assessmentTypeName": "test assessment",
+  "iStatus": 1
+}
+
+### Update assessment type
+PATCH {{local_url}}/1 HTTP/1.1
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "assessmentTypeName": "test assessment 2",
+  "iStatus": 0
+}
+
+### delete assessment type
+DELETE {{local_url}}/1 HTTP/1.1
+Authorization: {{token}}

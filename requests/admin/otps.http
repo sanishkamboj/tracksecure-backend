@@ -1,0 +1,13 @@
+@local_url = http://localhost:4000/api/v1.0/admin_panel/otp
+@live_url = http://54.159.32.73:4000/api/v1.0/admin_panel/otp
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTM1MDIsImVtYWlsIjoiaGVtYW5ncEBoaXJ0ZWNobm9sb2d5LmNvbSIsInVzZXJuYW1lIjoiaGVtYW5ncCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU5ODA3NDUyOSwiZXhwIjoxNTk4MTYwOTI5fQ.KZKFgMEWsZH1bujF0k3QJ-O24OHn3PdYFOTUFgrX62g
+
+POST {{local_url}} http/1.1
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "iUserId": 1,
+  "vOTPSubject": "2FA",
+  "vEmail": "rahultrivedi180@gmail.com"
+}

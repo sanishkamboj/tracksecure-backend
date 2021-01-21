@@ -1,0 +1,7 @@
+@local_url = http://localhost:4000/api/v1.0/user_panel/poa_records
+@live_url = http://54.159.32.73:4000/api/v1.0/user_panel/poa_records
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJocnAxOEBob3RtYWlsLmNvbSIsInVzZXJuYW1lIjoiaHJwMTgiLCJpYXQiOjE1OTc3NDgxNjQsImV4cCI6MTU5NzgzNDU2NH0.4dObhakPyAlHiFpvUzwvQm9bbOpBVsOGkGB88Vs-KqQ
+
+###
+GET {{local_url}}/1 HTTP/1.1
+Authorization: {{token}}

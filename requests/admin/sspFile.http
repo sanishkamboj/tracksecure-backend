@@ -1,0 +1,10 @@
+@local_url = http://localhost:4000/api/v1.0/admin_panel/sspFile
+@live_url = http://54.159.32.73:4000/api/v1.0/admin_panel/sspFile
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJkZWFkQHBvb2wuY29tIiwidXNlcm5hbWUiOiJkZWFkIiwiaWF0IjoxNTkwNDY5MDE3LCJleHAiOjE1OTA1NTU0MTd9.nlfIGXpL7ZwP-OkOuGKR5xJva-OsXdQLnZB19-fm3xE
+
+GET {{live_url}} HTTP/1.1
+Authorization: {{token}}
+
+###
+DELETE {{local_url}}?iSSPFileId=1&Key=development%2Fstorage%2Fssp%2Fsample.docx HTTP/1.1
+Authorization: {{token}}
